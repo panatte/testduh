@@ -23,11 +23,10 @@ export default function UploadFile() {
     // const [userID, setUserID] = useState<getUserid>({ UserID: 0});
     const [checkedItems, setCheckedItems] = useState<CheckedItems>({});
 
-    type CheckedItems = { [key: string]: boolean };
-
-    const handleChangeCheckedItems = (updateFunction: (prevState: CheckedItems) => CheckedItems) => {
-      setState(prevState => updateFunction(prevState));
+    const handleChangeCheckedItems = (items: CheckedItems) => {
+        setCheckedItems(items);
     };
+
     const handleNamechange = async (event: React.ChangeEvent<HTMLInputElement>) => {
         setName(event.target.value);
         console.log('name : ', name);
